@@ -1,0 +1,425 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 20rpx;
+  background: #f5f5f5;  
+}
+
+.banner {
+  height: 380rpx;
+  width: 100%;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin: 20rpx;
+  width: calc(100% - 40rpx);
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-list {
+  width: 100%;
+}
+
+.category-item {
+  background: #fff;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx;
+  background: #fff;
+}
+
+.category-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border-right: 4rpx solid #999;
+  border-bottom: 4rpx solid #999;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.arrow.expanded {
+  transform: rotate(-135deg);
+}
+
+.category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+.category-content.expanded {
+  max-height: 1000rpx;
+}
+
+.report-item {
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-top: 1rpx solid #eee;
+  line-height: 1.6;
+}
+
+/* Tab导航样式 */
+.tab-nav {
+  display: flex;
+  background: #fff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  padding: 16rpx 0;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #07c160;
+  font-weight: 500;
+}
+
+.tab-item.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: #07c160;
+  border-radius: 2rpx;
+}
+
+/* Tab内容样式 */
+.tab-content {
+  flex: 1;
+  height: calc(100vh - 200rpx);
+  background: #f5f5f5;
+}
+
+.tab-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-list {
+  padding: 20rpx;
+}
+
+.report-item {
+  background: #fff;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.report-content {
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 修改footer样式 */
+.footer {
+  margin-top: 20rpx;
+  padding: 20rpx 10rpx;
+  background: #f8f9fa;
+  border-top: 1rpx solid #eee;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+
+.footer-copyright {
+  border-top: 1rpx solid #eee;
+  padding-top: 10rpx;
+}
+
+.footer-copyright text {
+  display: block;
+  font-size: 22rpx;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* 修改头部操作区域样式 */
+.header-actions {
+  margin: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.author-entry {
+  flex: 1;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+/* 刷新按钮样式 */
+.refresh-btn {
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.refresh-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 移除旧的刷新按钮样式 */
+.refresh-container {
+  display: none;
+
+}
+
+/* 添加分析师入口样式 */
+.author-info {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-right: 20rpx;
+}
+
+.author-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.author-desc {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 4rpx;
+}
+
+.entry-arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border-right: 4rpx solid #999;
+  border-top: 4rpx solid #999;
+  transform: rotate(45deg);
+}
+
+.loading-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loading {
+  text-align: center;
+}
+
+.loading-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.loading text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 当正在加载时隐藏内容 */
+.content {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* 添加空状态样式 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.empty-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 笔记列表样式 */
+.note-list {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 20rpx;
+  overflow-y: auto;
+}
+
+.note-item {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.note-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 添加记笔记按钮样式 */
+.add-note-btn {
+  position: fixed;
+  right: 30rpx;
+  bottom: calc(30rpx + env(safe-area-inset-bottom));
+  width: 100rpx;
+  height: 100rpx;
+  background: #07c160;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 16rpx rgba(7, 193, 96, 0.3);
+  z-index: 100;
+}
+
+.add-note-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 分类选择弹窗样式 */
+.category-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 24rpx 24rpx 0 0;
+  padding: 30rpx;
+  transform: translateY(0);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.category-item {
+  background: #f5f5f5;
+  padding: 20rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.category-item:active {
+  background: #e0e0e0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

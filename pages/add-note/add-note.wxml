@@ -1,0 +1,38 @@
+<!--pages/add-note/add-note.wxml-->
+<navigation-bar title="记笔记" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
+<view class="container">
+  <!-- 分类选择器 -->
+  <picker 
+    bindchange="onCategoryChange" 
+    value="{{categoryIndex}}" 
+    range="{{categories}}" 
+    range-key="title"
+    class="category-picker"
+  >
+    <view class="picker-content">
+      <text class="picker-label">选择分类</text>
+      <view class="picker-value">
+        <text>{{categories[categoryIndex].title}}</text>
+        <image class="picker-arrow" src="/images/arrow-down.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </picker>
+
+  <!-- 笔记内容 -->
+  <view class="note-content">
+    <textarea
+      class="note-textarea"
+      placeholder="写下你的学习心得..."
+      maxlength="500"
+      bindinput="onInput"
+      value="{{content}}"
+    ></textarea>
+    <text class="word-count">{{content.length}}/500</text>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="submit-btn {{content.length > 0 ? 'active' : ''}}" bindtap="submitNote">
+    保存笔记
+  </view>
+</view>

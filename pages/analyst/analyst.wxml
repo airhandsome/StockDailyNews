@@ -1,0 +1,88 @@
+<navigation-bar title="分析师主页" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view scroll-y class="analyst-scroll">
+  <view class="analyst-container">
+    <!-- 顶部个人信息卡片 -->
+    <view class="analyst-header">
+      <view class="avatar-container">
+        <image class="avatar" src="/images/analyst-avatar.png" mode="aspectFill"/>
+        <view class="certification">
+          <icon class="verified" type="success" size="12"/>
+          <text>金牌分析师</text>
+        </view>
+      </view>
+      <view class="basic-info">
+        <view class="name">吴壕斯</view>
+        <view class="title">高级证券分析师</view>
+        <view class="institution">证券研究所</view>
+      </view>
+    </view>
+
+    <!-- 专业领域 -->
+    <view class="section">
+      <view class="section-title">研究领域</view>
+      <view class="tags">
+        <text class="tag">新能源</text>
+        <text class="tag">电动车</text>
+        <text class="tag">光伏产业</text>
+      </view>
+    </view>
+
+    <!-- 个人简介 -->
+    <view class="section">
+      <view class="section-title">个人简介</view>
+      <view class="content">
+        从业12年，专注新能源领域研究。曾获新财富最佳分析师、金牛分析师等奖项。擅长产业链分析与公司深度研究，对新能源行业有独到见解。
+      </view>
+    </view>
+
+    <!-- 研究成果 -->
+    <view class="section">
+      <view class="section-title">研究成果</view>
+      <view class="achievement-list">
+        <view class="achievement-item">
+          <text class="achievement-year">2023</text>
+          <text class="achievement-content">新财富最佳分析师第一名</text>
+        </view>
+        <view class="achievement-item">
+          <text class="achievement-year">2022</text>
+          <text class="achievement-content">金牛分析师新能源行业top3</text>
+        </view>
+        <view class="achievement-item">
+          <text class="achievement-year">2021</text>
+          <text class="achievement-content">水晶球奖最佳分析师</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 最新研报 -->
+    <view class="section">
+      <view class="section-title">最新研报</view>
+      <view class="report-list">
+        <view class="report-item">
+          <view class="report-title">新能源车产业链深度报告：创新引领发展</view>
+          <view class="report-date">2024-03-15</view>
+        </view>
+        <view class="report-item">
+          <view class="report-title">光伏行业：需求持续向好，产能优化加速</view>
+          <view class="report-date">2024-03-10</view>
+        </view>
+        <view class="report-item">
+          <view class="report-title">储能行业：政策利好，发展正当时</view>
+          <view class="report-date">2024-03-05</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="section contact-section">
+      <view class="contact-item">
+        <text class="contact-label">邮箱</text>
+        <text class="contact-value">airxxxxxxx@qq.com</text>
+      </view>
+      <view class="contact-item">
+        <text class="contact-label">办公电话</text>
+        <text class="contact-value">86-1xxxxxxx</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

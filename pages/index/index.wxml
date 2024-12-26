@@ -1,0 +1,107 @@
+<!--index.wxml-->
+<navigation-bar title="每日笔记" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+
+<!-- 作者入口和刷新按钮容器 -->
+<view class="header-actions">
+  <view class="author-entry" bindtap="navigateToAnalyst">
+    <view class="author-info">
+      <image class="author-avatar" src="/images/analyst-avatar.png" mode="aspectFill"/>
+      <view class="author-text">
+        <view class="author-name">学习笔记作者</view>
+        <view class="author-desc">金融学习爱好者</view>
+      </view>
+    </view>
+    <view class="entry-arrow"></view>
+  </view>
+  
+  <view class="refresh-btn" bindtap="refreshData">
+    <image class="refresh-icon" src="/images/refresh.png" mode="aspectFit"></image>
+  </view>
+</view>
+
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{isLoading}}">
+    <view class="loading">
+      <image class="loading-icon" src="/images/loading.gif" mode="aspectFit"></image>
+      <text>加载中...</text>
+    </view>
+  </view>
+
+  <!-- 正常内容 -->
+  <view class="content" wx:else>
+    <!-- 学习心得展示 -->
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+      <swiper-item wx:for="{{bannerList}}" wx:key="index">
+        <image src="{{item}}" mode="aspectFill" class="banner-image"/>
+      </swiper-item>
+    </swiper>
+
+    <!-- 笔记分类 -->
+    <view class="tab-nav">
+      <view 
+        wx:for="{{categories}}" 
+        wx:key="title"
+        class="tab-item {{currentTab === index ? 'active' : ''}}"
+        bindtap="switchTab"
+        data-index="{{index}}"
+      >
+        {{item.title}}
+      </view>
+    </view>
+
+    <!-- 笔记内容 -->
+    <swiper class="tab-content" current="{{currentTab}}" bindchange="swiperChange" style="width: 675rpx; height: 575rpx; display: block; box-sizing: border-box">
+      <swiper-item wx:for="{{categories}}" wx:key="title" class="tab-page">
+        <scroll-view scroll-y class="note-list">
+          <view wx:if="{{item.reports.length === 0}}" class="empty-state">
+            <image class="empty-icon" src="/images/empty.png" mode="aspectFit"></image>
+            <text class="empty-text">暂无笔记内容</text>
+          </view>
+          <view 
+            class="note-item" 
+            wx:for="{{item.reports}}" 
+            wx:for-item="note" 
+            wx:key="index"
+          >
+            <view class="note-content">{{note}}</view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+
+    <!-- 在容器最后添加记笔记按钮 -->
+    <view class="add-note-btn" bindtap="showAddNoteModal">
+      <image class="add-note-icon" src="/images/add.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 页脚 -->
+<view class="footer">
+  <view class="footer-content">
+    <view class="footer-copyright">
+      <text>记录学习心得，分享金融知识</text>
+      <text>Copyright © 2024 学习笔记  All Rights Reserved</text>
+    </view>
+  </view>
+</view>
+
+<!-- 添加选择分类的弹窗 -->
+<view class="category-modal" wx:if="{{showCategoryModal}}">
+  <view class="modal-mask" bindtap="hideAddNoteModal"></view>
+  <view class="modal-content">
+    <view class="modal-title">选择笔记分类</view>
+    <view class="category-list">
+      <view 
+        class="category-item" 
+        wx:for="{{categories}}" 
+        wx:key="title"
+        data-category="{{index}}"
+        bindtap="selectCategory"
+      >
+        {{item.title}}
+      </view>
+    </view>
+  </view>
+</view>
