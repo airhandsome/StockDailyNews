@@ -123,7 +123,7 @@ Page({
         url: 'https://api.coze.cn/v3/chat',
         method: 'POST',
         header: {
-          'Authorization': 'Bearer pat_q5FAIJ3Vx2n7uig5HnV1g616XHSXwFjfWyJQXX27LHbuQ2Wh4pScWywMB2Jyr6I5',
+          'Authorization': 'Bearer xxxxxxxxxxxxx',
           'Content-Type': 'application/json'
         },
         data: {
@@ -151,7 +151,7 @@ Page({
           url: `https://api.coze.cn/v3/chat/retrieve?chat_id=${chatId}&conversation_id=${conversationId}`,
           method: 'GET',
           header: {
-            'Authorization': 'Bearer pat_q5FAIJ3Vx2n7uig5HnV1g616XHSXwFjfWyJQXX27LHbuQ2Wh4pScWywMB2Jyr6I5',
+            'Authorization': 'Bearer xxxxxxxxxxxxxxx',
             'Content-Type': 'application/json'
           },
           success: (res) => {
@@ -178,7 +178,7 @@ Page({
         url: `https://api.coze.cn/v3/chat/message/list?chat_id=${chatId}&conversation_id=${conversationId}`,
         method: 'GET',
         header: {
-          'Authorization': 'Bearer pat_q5FAIJ3Vx2n7uig5HnV1g616XHSXwFjfWyJQXX27LHbuQ2Wh4pScWywMB2Jyr6I5',
+          'Authorization': 'Bearer xxxxxxxxxxxx',
           'Content-Type': 'application/json'
         },
         success: (res) => resolve(res.data),
